@@ -4,12 +4,12 @@ import { StatusBar } from 'expo-status-bar'; // Correct import for StatusBar
 import Animated,{ FadeIn, FadeInUp, FadeInDown, FadeOut } from 'react-native-reanimated';
 import { useNavigation } from '@react-navigation/native'; // Import useNavigation
 
-const LoginScreen = () => {
+const PickScreen = () => {
     const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar style="light"/>
-      <Image style={styles.backgroundImage} source={require('../assets/images/background2.png')} />
+      <Image style={styles.backgroundImage} source={require('../assets/images/background3.png')} />
       
 
       <View style={styles.lightsContainer}>
@@ -18,14 +18,10 @@ const LoginScreen = () => {
       </View>
 
       <View style={styles.innerContainer}>
-        <View style={styles.logoContainer}>
-          <Animated.Image entering={FadeInUp.delay(200).duration(1000).springify().damping(3)} style={styles.logo} source={require('../assets/images/logo.png')} />
-        </View>
-
         <View style={styles.textContainer}>
-          <Animated.Text entering={FadeInUp.duration(1000).springify()} style={styles.loginText}>
+            <Animated.Text entering={FadeInUp.duration(1000).springify()} style={styles.loginText}>
                 Login
-          </Animated.Text>
+            </Animated.Text>
         </View>
 
         <View style={styles.inputContainer}>
@@ -63,7 +59,7 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default PickScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -76,10 +72,11 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   logoContainer: {
-    width: '50%',
-    height: '50%',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
     position: 'absolute',
-    top: '-100', // Adjust this based on your design
+    top: '0%', // Adjust this based on your design
   },
   light1: {
     width: 90,
@@ -91,13 +88,6 @@ const styles = StyleSheet.create({
     height: 160,
     left: 275,
     top: -225, 
-  },
-  logo: {
-    justifyContent: 'center',
-    width: '50%',
-    height: '50%',
-    left: 145,
-    top: 60, // Adjust this based on your design
   },
   innerContainer: {
     flex: 1,
@@ -141,7 +131,7 @@ const styles = StyleSheet.create({
   // New Styles for Button and Text
   loginButton: {
     width: '100%',
-    backgroundColor: '#946E45',
+    backgroundColor: '#00A9E0',
     padding: 7,
     borderRadius: 16,
     marginBottom: 10,
@@ -158,7 +148,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   signUpText: {
-    color: '#946E45',
+    color: '#00A9E0',
     fontWeight: 'bold',
   },
 });

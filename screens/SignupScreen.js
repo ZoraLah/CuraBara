@@ -9,7 +9,7 @@ const SignupScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="light"/>
-      <Image style={styles.backgroundImage} source={require('../assets/images/background.png')} />
+      <Image style={styles.backgroundImage} source={require('../assets/images/background1.png')} />
       
 
       <View style={styles.lightsContainer}>
@@ -49,8 +49,8 @@ const SignupScreen = () => {
           </Animated.View>
 
           <Animated.View entering={FadeInDown.delay(400).duration(1000).springify()} style={styles.loginButton}>
-            <TouchableOpacity style={styles.loginButton}>
-                <Text style={styles.loginButtonText}>SignUp</Text>
+            <TouchableOpacity onPress={() => navigation.push('Pick')} style={styles.loginButton}>
+                <Text style={styles.loginButtonText}>Sign Up</Text>
             </TouchableOpacity>
           </Animated.View>
 
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   // New Styles for Button and Text
   loginButton: {
     width: '100%',
-    backgroundColor: '#00A9E0',
+    backgroundColor: '#3f5f32',
     padding: 7,
     borderRadius: 16,
     marginBottom: 10,
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   signUpText: {
-    color: '#00A9E0',
+    color: '#3f5f32',
     fontWeight: 'bold',
   },
 });
